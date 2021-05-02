@@ -1,4 +1,5 @@
 import { StatusBar } from "expo-status-bar";
+
 import React from "react";
 import {
   StyleSheet,
@@ -23,8 +24,21 @@ export default function App() {
           backgroundColor: "#003366",
           width: "100%",
           height: "10%",
+          justifyContent: "center",
+          alignItems: "center",
         }}
-      ></View>
+      >
+        <View>
+          <Text
+            style={{
+              color: "white",
+              fontSize: 12,
+            }}
+          >
+            StMU Mobile
+          </Text>
+        </View>
+      </View>
       <Image
         style={styles.stretch}
         source={require("./assets/st-marys-university-bell-tower.jpg")}
@@ -67,7 +81,6 @@ export default function App() {
         </View>
         <View // Directory
           style={{
-            backgroundColor: "red",
             width: 100,
             //height: 30,
           }}
@@ -97,7 +110,6 @@ export default function App() {
       <View //Parent View for News
         style={{
           marginTop: 50,
-          backgroundColor: "red",
           flexDirection: "row",
           justifyContent: "center",
           height: "20%",
@@ -120,6 +132,7 @@ export default function App() {
                 fontWeight: "bold",
                 textAlign: "center",
                 color: "white",
+                fontSize: 20,
               }}
             >
               St. Mary's University appoints new Vice President for Mission and
@@ -129,7 +142,7 @@ export default function App() {
 
           <View // Child Learn More Button
             style={{
-              marginTop: 50,
+              marginTop: 20,
               width: "42%",
             }}
           >
@@ -159,7 +172,6 @@ const styles = StyleSheet.create({
   dailyHealthButtonStyle: {
     flexDirection: "row",
     justifyContent: "center",
-    backgroundColor: "red",
     //alignItems: "center",
     //borderRadius: 20,
     //marginLeft: "50%",
