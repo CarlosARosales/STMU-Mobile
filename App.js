@@ -1,8 +1,8 @@
 //import * as React from 'react';
 import React from "react";
-import { NavigationContainer } from '@react-navigation/native';
-import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { NavigationContainer } from "@react-navigation/native";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import {
   StyleSheet,
   Text,
@@ -15,77 +15,8 @@ import {
   Linking,
   ImageBackground,
 } from "react-native";
+
 function Feed() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Feed!</Text>
-    </View>
-  );
-}
-
-function Profile() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Profile!</Text>
-    </View>
-  );
-}
-
-function Notifications() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Notifications!</Text>
-    </View>
-  );
-}
-
-const Tab = createMaterialBottomTabNavigator();
-
-function MyTabs() {
-  return (
-    <Tab.Navigator
-      initialRouteName="Feed"
-      activeColor="#e91e63"
-      labelStyle={{ fontSize: 12 }}
-      style={{ backgroundColor: 'tomato' }}
-    >
-      <Tab.Screen
-        name="Feed"
-        component={Feed}
-        options={{
-          tabBarLabel: 'Home',
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Notifications"
-        component={Notifications}
-        options={{
-          tabBarLabel: 'Updates',
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={26} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          tabBarLabel: 'Profile',
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="account" color={color} size={26} />
-          ),
-        }}
-      />
-    </Tab.Navigator>
-  );
-}
-
-export default function App() {
-  const handlePress = () => console.log("Text Pressed");
-  let x = 1;
   return (
     <SafeAreaView style={[styles.container]}>
       <View
@@ -225,10 +156,124 @@ export default function App() {
           </View>
         </View>
       </View>
+    </SafeAreaView>
+  );
+}
+
+function Events() {
+  return (
+    <SafeAreaView style={[styles.container]}>
+      <View
+        style={{
+          backgroundColor: "#003366",
+          width: "100%",
+          height: "10%",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <View>
+          <Text
+            style={{
+              color: "white",
+              fontSize: 12,
+            }}
+          >
+            Events
+          </Text>
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+}
+
+function Notifications() {
+  return (
+    <SafeAreaView style={[styles.container]}>
+      <View
+        style={{
+          backgroundColor: "#003366",
+          width: "100%",
+          height: "10%",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <View>
+          <Text
+            style={{
+              color: "white",
+              fontSize: 12,
+            }}
+          >
+            Campus Alerts
+          </Text>
+        </View>
+      </View>
+    </SafeAreaView>
+  );
+}
+
+const Tab = createMaterialBottomTabNavigator();
+
+function HomePage() {
+  return <View></View>;
+}
+
+function MyTabs() {
+  return (
+    <Tab.Navigator
+      initialRouteName="Feed"
+      activeColor="gold"
+      labelStyle={{ fontSize: 12 }}
+      style={{ backgroundColor: "gold" }}
+    >
+      <Tab.Screen
+        name="Feed"
+        component={Feed}
+        options={{
+          tabBarLabel: "Home",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home" color={color} size={26} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Events"
+        component={Events}
+        options={{
+          tabBarLabel: "Events",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons
+              name="calendar-blank-outline"
+              color={color}
+              size={26}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Notifications"
+        component={Notifications}
+        options={{
+          tabBarLabel: "Notifications",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="bell" color={color} size={26} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
+
+export default function App() {
+  const handlePress = () => console.log("Text Pressed");
+
+  return (
+    <SafeAreaView style={[styles.container]}>
       <NavigationContainer>
         <MyTabs />
       </NavigationContainer>
-
     </SafeAreaView>
   );
 }
