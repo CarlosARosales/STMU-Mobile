@@ -1,4 +1,5 @@
 //import * as React from 'react';
+import { Searchbar } from "react-native-paper";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
@@ -63,6 +64,7 @@ function Feed() {
           flexDirection: "row",
           justifyContent: "space-evenly",
           alignItems: "center",
+          elevation: 5,
         }}
       >
         <View //Campus Map Button View
@@ -101,6 +103,7 @@ function Feed() {
           <Button
             title="Dining"
             color="#003366"
+            style={{ elevation: 20 }}
             onPress={() => {
               Linking.openURL("https://stmarytx.campusdish.com/");
             }}
@@ -123,6 +126,7 @@ function Feed() {
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
+            elevation: 5,
           }}
         >
           <View // Child Text
@@ -144,6 +148,7 @@ function Feed() {
             style={{
               marginTop: 20,
               width: "42%",
+              elevation: 5,
             }}
           >
             <Button
@@ -183,6 +188,45 @@ function Events() {
           </Text>
         </View>
       </View>
+      <Text
+        style={{
+          marginTop: "10%",
+          marginLeft: "10%",
+          fontWeight: "bold",
+          fontSize: 14,
+        }}
+      >
+        Search for Events
+      </Text>
+      <View style={{ flexDirection: "row", justifyContent: "center" }}>
+        <Searchbar
+          style={{ marginTop: "10%", width: "80%" }}
+          placeholder="Search"
+        />
+      </View>
+      <View
+        style={{
+          marginTop: "10%",
+          flexDirection: "row",
+          justifyContent: "center",
+        }}
+      >
+        <Image
+          style={{
+            justifyContent: "center",
+            alignItems: "center",
+            width: 350,
+            height: 200,
+          }}
+          source={require("./assets/RT.jpg")}
+        />
+      </View>
+      <View style={{ marginLeft: "10%" }}>
+        <Text style={{ fontWeight: "bold", marginTop: "5%" }}>
+          StMU IEEE Chapter Meeting
+        </Text>
+        <Text style={{ fontSize: 10 }}>Tuesday, May 4 2021 at 3:30 PM CDT</Text>
+      </View>
     </SafeAreaView>
   );
 }
@@ -210,6 +254,142 @@ function Notifications() {
           </Text>
         </View>
       </View>
+      <View>
+        <Text
+          style={{ marginTop: "10%", marginLeft: "10%", fontWeight: "bold" }}
+        >
+          Campus Alerts
+        </Text>
+      </View>
+
+      <View
+        style={{ marginTop: "5%" }} //Container for alerts
+      >
+        <View //container for first alert
+          style={{
+            marginLeft: "5%",
+            flexDirection: "row",
+          }}
+        >
+          <View>
+            <MaterialCommunityIcons
+              name="alert-circle"
+              color={"black"}
+              size={26}
+            />
+          </View>
+          <View style={{ marginLeft: "5%" }}>
+            <View>
+              <Text style={{ color: "red", fontSize: 10 }}>CAMPUS ALERT</Text>
+            </View>
+            <View>
+              <Text style={{ fontWeight: "bold" }}>
+                Community Alert: Campus Closure
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View //container for second alert
+          style={{
+            marginLeft: "5%",
+            flexDirection: "row",
+            marginTop: "5%",
+          }}
+        >
+          <View>
+            <MaterialCommunityIcons
+              name="alert-circle"
+              color={"black"}
+              size={26}
+            />
+          </View>
+          <View style={{ marginLeft: "5%" }}>
+            <View>
+              <Text style={{ color: "red", fontSize: 10 }}>CAMPUS ALERT</Text>
+            </View>
+            <View>
+              <Text style={{ fontWeight: "bold" }}>
+                Community Alert: Bad Weather Notice
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View //container for second alert
+          style={{
+            marginLeft: "5%",
+            flexDirection: "row",
+            marginTop: "5%",
+          }}
+        >
+          <View>
+            <MaterialCommunityIcons
+              name="alert-circle"
+              color={"black"}
+              size={26}
+            />
+          </View>
+          <View style={{ marginLeft: "5%" }}>
+            <View>
+              <Text style={{ color: "red", fontSize: 10 }}>CAMPUS ALERT</Text>
+            </View>
+            <View>
+              <Text style={{ fontWeight: "bold" }}>
+                Community Alert: Classes Cancelled
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View //container for second alert
+          style={{
+            marginLeft: "5%",
+            flexDirection: "row",
+            marginTop: "5%",
+          }}
+        >
+          <View>
+            <MaterialCommunityIcons
+              name="alert-circle"
+              color={"black"}
+              size={26}
+            />
+          </View>
+          <View style={{ marginLeft: "5%" }}>
+            <View>
+              <Text style={{ color: "red", fontSize: 10 }}>CAMPUS ALERT</Text>
+            </View>
+            <View>
+              <Text style={{ fontWeight: "bold" }}>
+                Community Alert: Classes Cancelled
+              </Text>
+            </View>
+          </View>
+        </View>
+        <View //container for second alert
+          style={{
+            marginLeft: "5%",
+            flexDirection: "row",
+            marginTop: "5%",
+          }}
+        >
+          <View>
+            <MaterialCommunityIcons
+              name="alert-circle"
+              color={"black"}
+              size={26}
+            />
+          </View>
+          <View style={{ marginLeft: "5%" }}>
+            <View>
+              <Text style={{ color: "red", fontSize: 10 }}>CAMPUS ALERT</Text>
+            </View>
+            <View>
+              <Text style={{ fontWeight: "bold" }}>
+                Community Alert: Campus Closure
+              </Text>
+            </View>
+          </View>
+        </View>
+      </View>
     </SafeAreaView>
   );
 }
@@ -227,6 +407,9 @@ function MyTabs() {
       activeColor="gold"
       labelStyle={{ fontSize: 12 }}
       style={{ backgroundColor: "gold" }}
+      barStyle={{
+        backgroundColor: "#003366",
+      }}
     >
       <Tab.Screen
         name="Feed"
@@ -298,5 +481,6 @@ const styles = StyleSheet.create({
     width: "100%",
     marginTop: 50,
     height: "5%",
+    elevation: 10,
   },
 });
